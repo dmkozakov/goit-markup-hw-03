@@ -5,6 +5,8 @@
   --primary-white-color: #ffffff;
   --button-bg-color: #f5f4fa;
   --dark-bg-color: #2f303a;
+  --bg-main-color: #ffffff;
+  --bg-secondary-color: #f5f4fa;
 }
 /* button active #188CE8
 font-family: 'Raleway', sans-serif;
@@ -17,6 +19,23 @@ body {
   letter-spacing: 0.03em;
 }
 
+/* Утіліти */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 .list {
   list-style: none;
 }
@@ -25,19 +44,27 @@ body {
   text-decoration: none;
 }
 
-/* Навігація сайту */
-.logo-header {
-  color: #000000;
-
-  text-decoration: none;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
-.logo-footer {
-  color: #ffffff;
+.centered {
+  text-align: center;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+/* Навігація сайту */
+.logo-header {
+  margin-right: 94px;
+
+  color: #000000;
 
   text-decoration: none;
   font-family: 'Raleway', sans-serif;
@@ -50,7 +77,30 @@ body {
   color: var(--accent-color);
 }
 
-.site-nav .link {
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav-list {
+  display: flex;
+}
+
+.site-nav-list .item + .item,
+.contacts .item + .item {
+  margin-left: 50px;
+}
+
+/* .site-nav-list .item,
+.contacts .item {
+  outline: 2px solid red;
+} */
+
+.site-nav-list .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--primary-text-color);
 
   font-weight: 500;
@@ -59,7 +109,16 @@ body {
   letter-spacing: 0.02em;
 }
 
+.contacts {
+  display: flex;
+  margin-left: auto;
+}
+
 .contacts .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--secondary-text-color);
 
   font-weight: 500;
@@ -68,15 +127,27 @@ body {
   letter-spacing: 0.02em;
 }
 
+.header-page {
+  border-bottom: 1px solid #ececec;
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+}
+
 /* Герой */
 
 .hero {
   background-color: var(--dark-bg-color);
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
 .hero-title {
-  color: var(--primary-white-color);
+  padding-bottom: 40px;
 
+  color: var(--primary-white-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -87,13 +158,37 @@ body {
 
 /* Переваги */
 
-.features-title {
+.section-title {
+  display: none;
+}
+
+.features {
+  background-color: var(--bg-main-color);
+}
+
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.features-list .item {
+  width: calc((100% - 90px) / 4);
+  margin-right: 30px;
+}
+
+.features-list .item:nth-child(4n) {
+  margin-right: 0;
+}
+
+.feature-title {
+  margin-bottom: 10px;
+
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
 }
 
-.features .descr {
+.features-list .descr {
   font-size: 14px;
   line-height: 1.71;
 }
@@ -106,9 +201,55 @@ body {
   line-height: 1.17;
 }
 
-/* Команда */
+/* Приклади робіт */
 
-.team-item {
+.examples {
+  padding-top: 0;
+  background-color: var(--bg-main-color);
+}
+
+.example-img {
+  display: block;
+}
+
+.examples-title {
+  margin-bottom: 50px;
+}
+
+.example {
+  display: flex;
+}
+
+.example .item {
+  width: calc((100% - 60) / 3);
+  margin-right: 30px;
+}
+
+.example .item:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* Команда */
+.team {
+  background-color: var(--bg-secondary-color);
+}
+
+.team-title {
+  margin-bottom: 50px;
+}
+
+.team-list {
+  display: flex;
+}
+
+.team-photo {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.team-member {
+  margin-bottom: 10px;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
@@ -119,8 +260,23 @@ body {
   line-height: 1.19;
 }
 
+.team-list .item {
+  width: calc((100% - 90) / 4);
+  margin-right: 30px;
+  padding-bottom: 30px;
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  background-color: var(--bg-main-color);
+}
+
+.team-list .item:nth-child(4n) {
+  margin-right: 0;
+}
+
 /* Секції */
-.features .descr,
+.features-list .descr,
 .team .descr,
 .projects .descr {
   color: var(--secondary-text-color);
@@ -132,14 +288,44 @@ body {
   background-color: var(--dark-bg-color);
 }
 
+.footer-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.logo-footer {
+  display: block;
+  margin-bottom: 20px;
+
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+}
+
 .address {
   color: var(--primary-white-color);
 }
 
 .address-descr {
+  display: block;
+  margin-bottom: 9px;
+
+  color: var(--primary-white-color);
   font-style: normal;
   font-size: 14px;
   line-height: 1.71;
+}
+
+.address-contacts .list-item {
+  display: block;
+  margin-bottom: 9px;
+}
+
+.address-contacts .list-item:last-child {
+  margin-bottom: 0;
 }
 
 .address-contacts .link {
@@ -157,12 +343,57 @@ body {
 
 /* Портфоліо */
 
+.portfolio-title {
+  display: none;
+}
+
+.filter-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.filter-list .item + .item {
+  margin-left: 8px;
+}
+
 /* Приклади проєктів */
 
-.projects-title {
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-img {
+  display: block;
+}
+
+.projects-item {
+  padding: 20px 24px;
+  border: 1px solid #eeeeee;
+  border-top: none;
+}
+
+.project-title {
+  margin-bottom: 4px;
+
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+}
+
+.projects .item {
+  width: calc((100% - 60) / 3);
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.projects .item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.projects .item:nth-last-child(-n + 3) {
+  margin-bottom: 0;
 }
 
 .projects .descr {
@@ -173,6 +404,11 @@ body {
 /* Кнопки */
 
 .hero-button {
+  padding: 10px 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-width: 0;
+
   color: var(--primary-white-color);
   background-color: var(--accent-color);
 
@@ -192,6 +428,11 @@ body {
 }
 
 .filter {
+  min-width: 73px;
+  padding: 6px 22px;
+  border-radius: 4px;
+  border-width: 0;
+
   color: var(--primary-text-color);
   background-color: var(--button-bg-color);
 
